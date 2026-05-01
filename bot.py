@@ -27,7 +27,7 @@ keep_alive()
 # --------------------------------------------
 
 # التوكن وآيدي القسم
-BOT_TOKEN = "8749223377:AAHXI2uTJX8EwXshLwMHa8Dc4zLLORPjxU8"
+BOT_TOKEN = "8749223377:AAEhklm_HrI8jOtbqB0X8ZuoKWthSK4Vocs"
 TOPIC_ID = 74
 
 # بقية كودك (دالة generate_super_random_email) تبدأ من هنا...
