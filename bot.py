@@ -1,12 +1,36 @@
-import os
+
 import random
 import string
+import threading
+from flask import Flask
 from telegram import Update
 from telegram.ext import ApplicationBuilder, MessageHandler, filters, ContextTypes
 
+# --- كود الحل لمنصة Render (حطه هنا بالبداية) ---
+app = Flask('')
+
+@app.route('/')
+def home():
+ return "Bot is Running!"
+
+def run():
+    # سطر مهم عشان Render يلقى المنفذ وما يقفل البوت
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host='0.0.0.0', port=port)
+
+def keep_alive():
+    t = threading.Thread(target=run)
+    t.start()
+
+# تشغيل الخادم الوهمي
+keep_alive()
+# --------------------------------------------
+
 # التوكن وآيدي القسم
-BOT_TOKEN = "8749223377:AAHXI2uTJX8EwXshLwMhA8Dc4zLLORPjxU8"
-TOPIC_ID = 74 
+BOT_TOKEN = "8749223377:AAHXI2uTJX8EwXshLwMHa8Dc4zLLORPjxU8"
+TOPIC_ID = 74
+
+# بقية كودك (دالة generate_super_random_email) تبدأ من هنا...
 
 def generate_super_random_email(word):
     # خيارات متنوعة للإضافات
